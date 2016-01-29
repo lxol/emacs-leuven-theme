@@ -116,7 +116,7 @@ more...")
    `(whitespace-trailing ((,class (:foreground "#B3B3B3" :background "#FFFF57"))))
 
    ;; Mode line faces.
-   `(mode-line ((,class (:box (:line-width 1 :color "#1A2F54") :foreground "#85CEEB" :background "#335EA8"))))
+   `(mode-line ((,class (:box (:line-width 1 :color "#1A2F54") :foreground "#85CEEB" :background "#335EA8" :height 100))))
    `(mode-line-inactive ((,class (:box (:line-width 1 :color "#4E4E4C") :foreground "#F0F0EF" :background "#9B9C97"))))
    `(mode-line-buffer-id ((,class (:weight bold :foreground "white"))))
    `(mode-line-emphasis ((,class (:weight bold :foreground "white"))))
@@ -801,6 +801,28 @@ more...")
    ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
                                         ; colors used in Shell mode
  )
+
+(custom-theme-set-variables
+ 'leuven
+ '(ensime-sem-high-faces
+   ;; NOTE: Inconsolata doesn't have italics
+   ;; FURTHER NOTE: these are overlays, not faces
+   '((var . (:foreground "#9876aa" :underline (:style wave :color "yellow")))
+     (val . (:foreground "#9876aa"))
+     (varField . (:slant italic))
+     (valField . (:foreground "#9876aa" :slant italic))
+     (functionCall . (:foreground "#a9b7c6"))
+     (implicitConversion . (:underline (:color "#808080")))
+     (implicitParams . (:underline (:color "#808080")))
+     (operator . (:foreground "#cc7832"))
+     (param . (:foreground "#a9b7c6"))
+     (class . (:foreground "#4e807d"))
+     (trait . (:foreground "#4e807d" :slant italic))
+     (object . (:foreground "#6897bb" :slant italic))
+     (package . (:foreground "#cc7832"))
+     (deprecated . (:strike-through "#a9b7c6"))
+     )))
+
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path)
